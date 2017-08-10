@@ -1,0 +1,25 @@
+{# src/Blogger/BlogBundle/Resources/views/Page/contact.html.twig #}
+{% extends 'BloggerBlogBundle::layout.html.twig' %}
+
+{% block title %}Nuevo Blog{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>Nuevo Blog</h1>
+    </header>
+    <p>Formulario para crear un nuevo blog</p>
+
+    {{ form_start(form, {'action': path('blogger_blog_newBlog'), 'method': 'POST', 'attr': {'class': 'blogger'} }) }}
+        {{ form_widget(form) }}
+    {#
+        {{ form_errors(form) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.author) }}
+        {{ form_row(form.blog) }}
+        {{ form_row(form.image) }}
+        {{ form_row(form.tags) }}
+        {{ form_rest(form) }}
+        #}
+    {{ form_end(form) }}
+
+{% endblock %}
